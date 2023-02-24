@@ -1,4 +1,4 @@
-# PVNet: Pixel-wise Voting Network for 6DoF Pose Estimation
+# PVNet: Pixel-wise Voting Network for 6DoF Pose Estimation (Forked Version for Ubuntu 18.04 and CUDA 11.6)
 
 ![introduction](./assets/introduction.png)
 
@@ -28,8 +28,8 @@ Another way is to use the following commands.
     conda create -n pvnet python=3.7
     conda activate pvnet
 
-    # install torch 1.1 built from cuda 9.0
-    pip install torch==1.1.0 -f https://download.pytorch.org/whl/cu90/stable
+    # install torch 1.1 built
+    pip install torch==1.1.0
 
     pip install Cython==0.28.2
     sudo apt-get install libglfw3-dev libglfw3
@@ -39,7 +39,7 @@ Another way is to use the following commands.
     ```
     ROOT=/path/to/clean-pvnet
     cd $ROOT/lib/csrc
-    export CUDA_HOME="/usr/local/cuda-9.0"
+    export CUDA_HOME="/usr/local/cuda-11.6"
     cd ransac_voting
     python setup.py build_ext --inplace
     cd ../nn
@@ -53,9 +53,9 @@ Another way is to use the following commands.
 
     # If you want to use the uncertainty-driven PnP
     cd ../uncertainty_pnp
-    sudo apt-get install libgoogle-glog-dev
-    sudo apt-get install libsuitesparse-dev
-    sudo apt-get install libatlas-base-dev
+    sudo apt install libgoogle-glog-dev
+    sudo apt install libsuitesparse-dev
+    sudo apt install libatlas-base-dev
     python setup.py build_ext --inplace
     ```
 3. Set up datasets:
